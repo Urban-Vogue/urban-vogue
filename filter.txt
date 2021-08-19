@@ -1,0 +1,178 @@
+<div class = "filter">
+                <h1>Filters</h1>
+                <hr>
+                <h3>Brand</h3>
+                <hr>
+                <?php
+                    $con = mysqli_connect("localhost","root","","clothes-stock");
+                    $brand_query = "SELECT * FROM clothes where type = 'kurta' and gender = 'men' group by brand";
+                    $brand_query_run  = mysqli_query($con, $brand_query);
+
+                    if(mysqli_num_rows($brand_query_run) > 0)
+                    {
+                        foreach($brand_query_run as $brandlist)
+                        {
+                            $checked = [];
+                            if(isset($_GET['brands']))
+                            {
+                                $checked = $_GET['brands'];
+                            }
+                            ?>
+                                <div>
+                                    <input type="checkbox" name="brands[]" value="<?= $brandlist['brand']; ?>" 
+                                        <?php if(in_array($brandlist['brand'], $checked)){ echo "Abhiyuthan"; } ?>
+                                     />
+                                    <?= $brandlist['brand']; ?>
+                                </div>
+                            <?php
+                        }
+                    }
+                    else
+                    {
+                        echo "No Brands Found";
+                    }
+                ?>
+            </div>
+
+
+!!!!!!!! for image and pagination !!!!!!!!!
+
+
+<div class="showcase">
+
+            <?php
+
+            $db = mysqli_connect("localhost", "root", "", "clothes-stock");  // database connection
+
+            $results_per_page = 40;
+            //find the total number of results stored in the database  
+            $query = "SELECT * FROM clothes where type = 'kurta' and gender = 'men' ";
+            $result = mysqli_query($db, $query);
+            $number_of_result = mysqli_num_rows($result);  // 1800 stored!
+
+            //determine the total number of pages available  
+            $number_of_page = ceil($number_of_result / $results_per_page);
+
+            //determine which page number visitor is currently on  
+            if (!isset($_GET['page'])) {
+                $page = 1;
+            } else {
+                $page = $_GET['page'];
+            }
+
+            //determine the sql LIMIT starting number for the results on the displaying page  
+            $page_first_result = ($page - 1) * $results_per_page;
+
+
+            //retrieve the selected results from database   
+            $query = "SELECT * FROM clothes where type = 'kurta' and gender = 'men' LIMIT " . $page_first_result . ',' . $results_per_page;
+            $result = mysqli_query($db, $query);
+            ?>
+
+            <?php
+            while ($data = mysqli_fetch_array($result)) {
+            ?>
+                <a href="http://www.google.com">
+                    <div class="models">
+                        <img src="<?php echo $data['link']; ?>" width="210" height="250">
+                        <div class="price">
+                            <?php echo $data['brand']; ?>
+                            <br>
+                            <?php echo "Rs."; ?>
+                            <?php echo $data['price']; ?>
+                        </div>
+                    </div>
+                </a>
+            <?php
+            };
+            ?>
+        </div>
+    </div>
+    <div class="page-number">
+        <?php
+        for ($page = 1; $page <= $number_of_page; $page++) {
+            echo '<a style = "text-decoration: none; color: black; font-weight: bold; font-size: 18px; border: 1px solid black; padding: 2px; text-align: center; font-family: Calibri" href = "main.php?page=' . $page . ' ">' . $page . '&nbsp </a>';
+        }
+        ?>
+    </div>
+
+
+// for register.php
+
+require_once "config_login.php";
+
+$username = $password = $confirm_password = $user_email =  "";
+$username_err = $password_err = $confirm_password_err = $email_err = "";
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+    // Check if username is empty
+    if (empty(trim($_POST["username"]))) {
+        $username_err = "Username cannot be blank";
+    } else {
+        $sql = "SELECT id FROM users WHERE username = ?";
+        $stmt = mysqli_prepare($db, $sql);
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+
+            // Set the value of param username
+            $param_username = trim($_POST['username']);
+
+            // Try to execute this statement
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_store_result($stmt);
+                if (mysqli_stmt_num_rows($stmt) == 1) {
+                    $username_err = "This username is already taken";
+                    echo '<script>alert("This username is already taken")</script>';
+
+                } else {
+                    $username = trim($_POST['username']);
+                }
+            } else {
+                echo "Something went wrong";
+            }
+            mysqli_stmt_close($stmt);
+        }
+       
+    }
+
+    // Check for password
+    if (empty(trim($_POST['password']))) {
+        $password_err = "Password cannot be blank";
+        echo '<script>alert("Password cannot be blank")</script>';
+
+    } elseif (strlen(trim($_POST['password'])) < 5) {
+        $password_err = "Password cannot be less than 5 characters";
+    } else {
+        $password = trim($_POST['password']);
+    }
+
+    // Check for confirm password field
+    if (trim($_POST['password']) !=  trim($_POST['confirm_password'])) {
+        $password_err = "Passwords should match";
+        echo '<script>alert("Passwords dont match. Try Again.")</script>';
+    }
+
+
+    // If there were no errors, go ahead and insert into the database
+    if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
+        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $stmt = mysqli_prepare($db, $sql);
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+
+            // Set these parameters
+            $param_username = $username;
+            $param_password = password_hash($password, PASSWORD_DEFAULT);
+
+            // Try to execute the query
+            if (mysqli_stmt_execute($stmt)) {
+                header("location: login.php");
+            } else {
+                echo "Something went wrong... cannot redirect!";
+            }
+        }
+        mysqli_stmt_close($stmt);
+    }
+    mysqli_close($db);
+}

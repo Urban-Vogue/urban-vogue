@@ -1,0 +1,232 @@
+
+
+section{
+    width: 100%;
+    height: 300px;
+    background: url(./Images/2nd.png);
+    transition: ease-in;
+}
+
+video {
+    object-fit: fill;
+}
+
+.content-page {
+    display: flex;
+    width: 100%;
+}
+
+.filter {
+    display: flex;
+    width: 200px;
+}
+
+.showcase {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.showcase a {
+    text-decoration: none;
+}
+
+.models {
+    display: flex;
+    padding: 10px 10px 10px 27px;
+    flex-direction: column;
+}
+
+.price {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    padding: 10px;
+    font-weight: bolder;
+    text-align: left;
+    font-family: 'Josefin Sans';
+    background: #fefeff;  
+    line-height: 25px;
+}
+
+.page-number {
+    margin-left: 50px;
+}
+
+.price:hover {
+    background: linear-gradient(30deg, rgba(187, 184, 184, 0.281), rgba(185, 179, 179, 0.493));
+}
+
+.title-div
+{
+    width: inherit;
+    height: 80px;
+    background-color: rgb(253, 245, 174);
+    background-blend-mode: lighten;
+}
+#logo
+{
+    width: 80px;height: 80px;
+    background-image: url(./Urban\ Vogue-logos_transparent.png);
+    background-size: contain;
+    margin-top: 1px; margin-left: 10px;
+    float: left;
+    border-radius: 50%;
+    transition: ease all 1s;
+}
+#logo:hover
+{
+    transition: ease all 1s;;
+    transform: rotate(360deg) scale(1.2);
+}
+#v
+{
+    width: 80px;height: 80px;
+    background-image: url(../Main_page/Capture-removebg-preview.png);
+    background-size: contain;
+    margin-top: 1px; margin-left: 10px;
+    float: left;
+    margin-right: 0px;
+    transform: skew(-15deg,0deg);
+    animation: mymove 5s 1;
+}
+.title
+{
+    font-size: 50px;
+    margin-top: 10px;;
+    float: left;
+    margin-left: 20px;;
+    text-shadow: 2px 2px 2px gray;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    font-style: italic;
+    animation: ease-in;
+}
+#menu-div
+{
+    width: 100%;
+    height: 40px;
+    padding-left: 480px;
+    margin-top: -14px;
+}
+li{
+    float: left;
+    padding: 10px;;
+    color: #282c3f;
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-style: normal;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 0px;
+
+}
+li:hover{
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    border-bottom: 2.5px rgb(0, 225, 255) solid ;  
+    padding-bottom: 3px;
+}
+ol{
+   padding-left: 0px;;
+    list-style: none;;
+}
+.dropbtn
+{
+    text-decoration: none;
+    color: #282c3f;
+}
+.dropbtn:hover
+{
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    border-bottom: 2.5px rgb(0, 225, 255) solid ;  
+    padding-bottom: 3px;
+}
+.icon
+{
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: -90px;
+    color:rgb(36, 36, 36);
+    margin-right: 15px;
+    margin-top: 5px;
+}
+.fashion
+{
+    font-size: 25px;
+    font-weight: 800;
+    font-style: italic; 
+    font-family: 'Festive', cursive;
+    font-family: 'Jomhuria', cursive;
+    font-family: 'Pacifico', cursive;
+    margin-left: 52%;
+    margin-top: -3px;
+    color:rgb(19, 19, 19);
+}
+
+.dropdown 
+{
+    position: relative;
+    display: inline-block;
+    color:black;
+    
+}
+.dropdown:hover
+{
+    border-bottom: 0px;
+}
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width:150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    height:398px;
+    margin-top: 2px;
+    margin-left:-80%;
+    border-top: 2.5px solid aqua;
+}
+.dropdown-content b
+{
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-display: fallback;
+    width:inherit;
+    color:#ee5f73;
+    padding-bottom: 4px;
+    border-top: 1px solid rgba(128, 128, 128, 0.226);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.315);
+} 
+.dropdown-content a:hover 
+{
+    background-color: #f1f1f1;
+    font-weight: bolder;
+}
+.dropdown:hover .dropdown-content 
+{
+    display: block;
+}
+.dropdown-content > ul > a
+{
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 300;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-display: fallback;
+    width:150px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+    margin-left: -32px;
+}

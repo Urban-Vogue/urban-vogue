@@ -1,0 +1,389 @@
+body {
+  background-image: url("Title.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  opacity: 0.9;
+}
+.title-div {
+  width: inherit;
+  height: 80px;
+  background-color: rgb(253, 245, 174);
+  background-blend-mode: lighten;
+}
+#logo {
+  width: 80px;
+  height: 80px;
+  background-image: url(Urban\ Vogue-logos_transparent.png);
+  background-size: contain;
+  margin-top: 1px;
+  margin-left: 10px;
+  float: left;
+  border-radius: 50%;
+  transition: ease all 1s;
+}
+#logo:hover {
+  transition: ease all 1s;
+  transform: rotate(360deg) scale(1.2);
+}
+#v {
+  width: 80px;
+  height: 80px;
+  background-image: url("Capture-removebg-preview.png");
+  background-size: contain;
+  margin-top: 1px;
+  margin-left: 10px;
+  float: left;
+  margin-right: 0px;
+  transform: skew(-15deg, 0deg);
+  animation: mymove 5s 1;
+}
+.title {
+  font-size: 50px;
+  margin-top: 10px;
+  float: left;
+  margin-left: 20px;
+  text-shadow: 2px 2px 2px gray;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bolder;
+  font-style: italic;
+  animation: ease-in;
+}
+#menu-div {
+  width: 1400px;
+  height: 40px;
+  padding-left: 480px;
+}
+li {
+  float: left;
+  padding: 10px;
+  color: #282c3f;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-style: normal;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-top: 0px;
+}
+li:hover {
+  cursor: pointer;
+  color: rgb(255, 0, 0);
+  border-bottom: 2.5px rgb(0, 225, 255) solid;
+  padding-bottom: 3px;
+}
+ol {
+  padding-left: 0px;
+  list-style: none;
+}
+.dropbtn {
+  text-decoration: none;
+  color: #282c3f;
+}
+.dropbtn:hover {
+  cursor: pointer;
+  color: rgb(255, 0, 0);
+  border-bottom: 2.5px rgb(0, 225, 255) solid;
+  padding-bottom: 3px;
+}
+.icon {
+  float: right;
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: -90px;
+  color: rgb(36, 36, 36);
+  margin-right: 15px;
+  margin-top: 5px;
+}
+.fashion {
+  font-size: 25px;
+  font-weight: 800;
+  font-style: italic;
+  font-family: "Festive", cursive;
+  font-family: "Jomhuria", cursive;
+  font-family: "Pacifico", cursive;
+  margin-left: 52%;
+  margin-top: -3px;
+  color: rgb(19, 19, 19);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(49, 49, 49);
+  height: auto;
+  width: inherit;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding-top: 20px;
+  color: #fff;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content p {
+  max-width: 500px;
+  margin: 6px auto;
+  line-height: 19px;
+  font-size: 15px;
+}
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+}
+.socials li {
+  margin: 0 10px;
+}
+.socials a {
+  text-decoration: none;
+  color: #fff;
+}
+.socials a i {
+  font-size: 1.1rem;
+  transition: color 0.4s ease;
+}
+.socials a:hover i {
+  color: aqua;
+}
+.footer-bottom {
+  background: rgb(24, 24, 24);
+  width: inherit;
+  padding: 20px 0;
+  text-align: center;
+}
+.footer-bottom p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 200;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: black;
+}
+.dropdown:hover {
+  border-bottom: 0px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: 340px;
+  margin-top: 2px;
+  margin-left: -80%;
+  border-top: 2.5px solid aqua;
+}
+.dropdown-content b {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-display: fallback;
+  width: inherit;
+  color: #ee5f73;
+  padding-bottom: 4px;
+  border-top: 1px solid rgba(128, 128, 128, 0.226);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.315);
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  font-weight: bolder;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content > ul > a {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: normal;
+  font-display: fallback;
+  width: 150px;
+  padding-bottom: 5px;
+  padding-top: 3px;
+}
+.Coupon {
+  position: fixed;
+  bottom: 130px;
+  width: 44px;
+  height: 288px;
+  background-color: #535766;
+  z-index: 6;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.CouponCol {
+  right: 0px;
+}
+.CouponArrow {
+  width: 0px;
+  height: 0px;
+  margin: 24px 16px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+.CouponArrowCol {
+  border-right: 14px solid white;
+}
+.CouponContent {
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  width: 36px;
+  padding: 4px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  display: inline-block;
+}
+.banner {
+  width: inherit;
+  height: 300px;
+  margin-top: 30px;
+  background-color: lightcyan;
+}
+
+video {
+  object-fit: fill;
+}
+
+.topbrands {
+  display: block;
+  margin-top: 25px;
+  background-color: #fff;
+  border: 1.5px solid rgba(128, 128, 128, 0.315);
+  width: 98%;
+  margin-left: 1%;
+  border-radius: 5px;
+}
+.topbrands-content {
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  color: rgb(39, 39, 39);
+  border: 1.5px solid rgba(128, 128, 128, 0.315);
+  width: 100%;
+  height: 40px;
+  padding: 4px;
+  padding-left: 20px;
+  padding-bottom: 4px;
+  transition: ease-in 0.5s;
+}
+
+.topbrands-content:hover {
+  color: white;
+  background: linear-gradient(67deg, rgb(49, 48, 48), rgb(226, 224, 123));
+}
+
+.topbrands-contentpic {
+  display: flex;
+  width: 100%;
+  height: 400px;
+}
+
+.top {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  padding: 30px;
+  justify-content: space-between;
+}
+
+.women {
+  width: 20%;
+  text-align: center;
+  font-family: "Fondamento";
+  font-size: 50px;
+  padding-top: 100px;
+  transition: all ease-in 0.4s;
+}
+
+.women a:hover {
+  font-size: 55px;
+  color: crimson;
+}
+
+marquee img:hover {
+    transform: scale(1.1);
+}
+
+marquee img {
+    transition: ease-in 0.5s;
+    border: 2px solid #282c3f
+}
+
+
+
+/* border of image marquee */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+
+.outer-circle {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  animation: rotate 1.5s linear infinite;
+}
+
+
+span:nth-child(1) {
+  filter: blur(5px);
+}
+
+span:nth-child(2) {
+  filter: blur(10px);
+}
+
+span:nth-child(3) {
+  filter: blur(25px);
+}
+
+span:nth-child(4) {
+  filter: blur(150px);
+}
+
+
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
